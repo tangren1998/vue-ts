@@ -1,5 +1,19 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+/**
+ * main.ts
+ *
+ * Bootstraps plugins then mounts the App`
+ */
 
-createApp(App).mount('#app')
+// Composables
+import { createApp } from 'vue'
+
+// Components
+import App from './App.vue'
+import './style.css'
+
+// Plugins
+import { registerPlugins } from '@/plugins'
+
+const app = createApp(App)
+registerPlugins(app)
+app.mount('#app')
