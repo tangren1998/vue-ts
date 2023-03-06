@@ -16,6 +16,10 @@ const routes = [
       },
     ],
   },
+  {
+    path: '/:catchAll(.*)',
+    component: () => import(/* webpackChunkName: "notFound" */ '@/views/NotFound.vue'),
+  },
 ]
 
 const router = createRouter({
